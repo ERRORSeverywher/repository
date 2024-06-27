@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            function checkAnswer(choice) {
+                var buttons = document.querySelectorAll('.multiple-choice button');
+                buttons.forEach((btn) => {
+                    btn.disabled = true;
+                    if (btn.value === 'correct') {
+                        btn.style.backgroundColor = '#90EE90';
+                    } else {
+                        btn.style.backgroundColor = '#F08080';
+                    }
+                });
+
+                var resultText = document.getElementById('result-mc');
+                if (choice === 'correct') {
+                    resultText.textContent = "Correct!";
+                } else {
+                    resultText.textContent = "Incorrect";
+                }
+                resultText.style.display = "block";
+            }
+
+            function checkFreeResponse() {
+                var input = document.getElementById('free-response-input');
+                var resultText = document.getElementById('result-fr');
+                var correctAnswer = "42";
+                if (input.value.trim() === correctAnswer) {
+                    input.style.backgroundColor = '#90EE90';
+                    resultText.textContent = "Correct!";
+                } else {
+                    input.style.backgroundColor = '#F08080';
+                    resultText.textContent = "Incorrect";
+                }
+                resultText.style.display = "block";
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice</h2>
+                <hr>
+                <h3>What is the capital of France?</h3>
+                <button onclick="checkAnswer('incorrect')">London</button>
+                <button onclick="checkAnswer('incorrect')">Berlin</button>
+                <button onclick="checkAnswer('correct')">Paris</button>
+                <button onclick="checkAnswer('incorrect')">Madrid</button>
+                <p id="result-mc" style="display:none;"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is the answer to life, the universe, and everything?</h3>
+                <input type="text" id="free-response-input">
+                <button onclick="checkFreeResponse()">Confirm</button>
+                <p id="result-fr" style="display:none;"></p>
+            </div>
+        </div>
+    </body>
+</html>
