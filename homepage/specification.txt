@@ -1,0 +1,26 @@
+HTML Tags Used:
+1. <a>
+2. <button>
+3. <div>
+4. <h1>
+5. <nav>
+6. <ul>
+7. <li>
+8. <script>
+9. <link>
+10. <p>
+
+CSS Properties Used:
+1. font-family
+2. color
+3. font-weight
+4. background-color (in Bootstrap classes)
+5. margin-top (in Bootstrap classes)
+
+JavaScript:
+- Used to display an alert message welcoming users to the site.
+
+Bootstrap:
+- Navbar for navigation.
+- Container class to align content.
+- Button classes for styling buttons.
